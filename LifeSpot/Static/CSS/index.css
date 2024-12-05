@@ -36,6 +36,8 @@ footer {
     bottom: 0;
     font-size: medium;
     color: dimgrey;
+    line-height: 66%;
+    padding-left: 1%;
 }
 
 aside {
