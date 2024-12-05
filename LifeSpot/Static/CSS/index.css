@@ -1,13 +1,27 @@
-﻿body {
-    padding-left: 11%;
+﻿/* Простые селекторы*/
+.video-container {
+    display: inline-block;
+    padding-left: 1%;
+    padding-top: 1%;
 }
+
+.navbar {
+    color: darkgray;
+    padding-left: 15%;
+}
+
 header {
     padding-left: 1%;
+    padding-top: 1.2%;
 }
+
 footer {
     position: absolute;
     bottom: 0;
+    font-size: medium;
+    color: dimgrey;
 }
+
 aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
     width: 10%;
@@ -17,15 +31,10 @@ aside {
     left: 0;
     background-color: #111; /* Черный цвет фона (задан в виде кода) */
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
-    padding-top: 20px;
+    padding-top: 2%;
+    font-size: large;
 }
 
-/* Свойства стиля элемента. Подробнее о них в модуле по CSS */
-.video-container {
-    display: inline-block;
-    padding-left: 1%;
-}
-.navbar {
-    color: darkgray;
-    padding-left: 15%;
+body {
+    padding-left: 11%;
 }
