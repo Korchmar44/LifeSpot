@@ -10,6 +10,9 @@
             background-color: azure;
             padding: 10px;
         }
+        .video-container {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -22,12 +25,20 @@
     <a href="https://www.youtube.com/watch?v=GSmCh4DrbWY"><button>Нью-Йорк</button></a>
     <a href="https://www.youtube.com/watch?v=JplMzss6_YE&ab_channel=WokiliWanders"><button>Лондон</button></a>-->
         <!--Нью-Йорк-->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
+        </div>
         <!--Санкт-Петербург-->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!--Лондон-->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Санкт-Петербург, Невский Проспект</h3>
+        </div>
+            <!--Лондон-->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Лондон, автобусный маршрут</h3>
+        </div>
     </div>
 </body>
 </html>
