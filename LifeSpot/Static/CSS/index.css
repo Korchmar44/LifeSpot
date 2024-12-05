@@ -10,6 +10,15 @@
     padding-left: 15%;
 }
 
+    .navbar a {
+        text-decoration: none; /* убираем подчеркивание ссылки */
+        color: cadetblue /* цвет текста ссылки */
+    }
+        .navbar a:hover {
+            color: cornflowerblue; /* новый цвет текста при наведении на ссылку */
+            font-weight: bold; /* жирный шрифт при наведении на ссылку */
+        }
+
 header {
     padding-left: 1%;
     padding-top: 1.2%;
