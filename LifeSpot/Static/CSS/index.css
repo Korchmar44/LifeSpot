@@ -1,4 +1,16 @@
-﻿/* Простые селекторы*/
+﻿/*Глобальные стили для хедеров на всём сайте*/
+header {
+    color: black;
+    padding-left: 1%;
+    padding-top: 1.2%;
+}
+/*Стиль хедера для главной страницы имеет приоритет,
+так как используется селектор по идентификатору*/
+#header-index {
+    color: cadetblue;
+}
+
+/* Простые селекторы*/
 .video-container {
     display: inline-block;
     padding-left: 1%;
@@ -18,11 +30,6 @@
             color: cornflowerblue; /* новый цвет текста при наведении на ссылку */
             font-weight: bold; /* жирный шрифт при наведении на ссылку */
         }
-
-header {
-    padding-left: 1%;
-    padding-top: 1.2%;
-}
 
 footer {
     position: absolute;
