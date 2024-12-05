@@ -7,7 +7,7 @@ header {
 /*Стиль хедера для главной страницы имеет приоритет,
 так как используется селектор по идентификатору*/
 #header-index {
-    color: cadetblue;
+    color: darkslateblue;
 }
 
 /* Простые селекторы*/
@@ -53,4 +53,8 @@ aside {
 
 body {
     padding-left: 11%;
+}
+
+header, footer, body, .video-container {
+    background-color: lightsteelblue;
 }
