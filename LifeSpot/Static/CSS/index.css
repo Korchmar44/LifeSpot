@@ -60,3 +60,16 @@ body {
 header, footer, body, .video-container {
     background-color: lightsteelblue;
 }
+
+#search_video {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s; /* плавный переход для эффекта подсветки */
+    width: 25vw; /* задаем ширину в 1/4 ширины экрана */
+    float: right; /* выравнивание справа */
+}
+
+    #search_video:focus {
+        border-color: blue; /* цвет рамки при выборе текстового поля для ввода */
+    }
