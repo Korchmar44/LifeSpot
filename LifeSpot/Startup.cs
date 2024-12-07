@@ -27,12 +27,19 @@ namespace LifeSpot
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/Static/CSS/index.css", async context =>
+                endpoints.MapGet("/wwwroot/css/index.css", async context =>
                 {
                     // по аналогии со страницей Index настроим на нашем сервере путь до страницы со стилями, чтобы браузер знал, откуда их загружать
-                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "index.css");
+                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "css", "index.css");
                     var css = await File.ReadAllTextAsync(cssPath);
                     await context.Response.WriteAsync(css);
+                });
+                endpoints.MapGet("/wwwroot/js/greeting.js", async context =>
+                {
+                    // по аналогии со страницей Index настроим на нашем сервере путь до страницы со стилями, чтобы браузер знал, откуда их загружать
+                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "js", "greeting.js");
+                    var js = await File.ReadAllTextAsync(jsPath);
+                    await context.Response.WriteAsync(js);
                 });
                 endpoints.MapGet("/", async context =>
                 {
