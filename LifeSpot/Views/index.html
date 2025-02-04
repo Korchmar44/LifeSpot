@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <link href="/wwwroot/css/index.css" rel="stylesheet" type="text/css" />
-    <script src="/wwwroot/js/greeting.js" type="text/javascript"></script>
+    <script src="../wwwroot/js/index.js" type="text/javascript"></script>
+    <script>handleSession()</script>
 </head>
 <body>
-    <input type="text" oninput="
-        let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
-        let elements = document.getElementsByClassName('video-container');
-        for (let i = 0; i <= elements.length; i++) {
-            let videoText = elements[i].querySelector('.video-title').innerText;
-            if (!videoText.toLowerCase().includes(inputString.toLowerCase())) {
-                elements[i].style.display = 'none';
-            } else {
-                elements[i].style.display = 'inline-block'
-            }
-        }
-    " size=50% />
     <header id="header-index">
         <!--Заголовок страницы-->
         <h1>LifeSpot - прямые трансляции с улиц</h1>
         <!--Параграф-->
         <p>Покажем, что происходит прямо сейчас</p>
+        <input type="text" oninput="filterContent()" size=50% />
     </header>
     <aside id="sidebar">
         <div class="navbar">
