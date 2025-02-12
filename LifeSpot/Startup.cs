@@ -27,59 +27,9 @@ namespace LifeSpot
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
-                    var html = await File.ReadAllTextAsync(viewPath);
-                    await context.Response.WriteAsync(html);
-                });
-                endpoints.MapGet("/testing", async context =>
-                {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
-
-                    // Загружаем шаблон страницы, вставляя в него элементы
-                    var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
-                        .Replace("<!--SIDEBAR-->", sideBarHtml)
-                        .Replace("<!--FOOTER-->", footerHtml);
-
-                    await context.Response.WriteAsync(html.ToString());
-                });
-                endpoints.MapGet("/about", async context =>
-                {
-                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
-
-                    // Загружаем шаблон страницы, вставляя в него элементы
-                    var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
-                        .Replace("<!--SIDEBAR-->", sideBarHtml)
-                        .Replace("<!--FOOTER-->", footerHtml);
-
-                    await context.Response.WriteAsync(html.ToString());
-                });
-                endpoints.MapGet("/wwwroot/css/index.css", async context =>
-                {
-                    // по аналогии со страницей Index настроим на нашем сервере путь до страницы со стилями, чтобы браузер знал, откуда их загружать
-                    var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "css", "index.css");
-                    var css = await File.ReadAllTextAsync(cssPath);
-                    await context.Response.WriteAsync(css);
-                });
-                endpoints.MapGet("/wwwroot/js/testing.js", async context =>
-                {
-                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "js", "testing.js");
-                    var js = await File.ReadAllTextAsync(jsPath);
-                    await context.Response.WriteAsync(js);
-                });
-                endpoints.MapGet("/wwwroot/js/index.js", async context =>
-                {
-                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "js", "index.js");
-                    var js = await File.ReadAllTextAsync(jsPath);
-                    await context.Response.WriteAsync(js);
-                });
-                endpoints.MapGet("/wwwroot/js/about.js", async context =>
-                {
-                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "js", "about.js");
-                    var js = await File.ReadAllTextAsync(jsPath);
-                    await context.Response.WriteAsync(js);
-                });
+                endpoints.MapCss();
+                endpoints.MapJs();
+                endpoints.MapHtml();
             });
         }
     }
