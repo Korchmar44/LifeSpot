@@ -76,22 +76,6 @@ function getReview() {
     writeReview(review)
 }
 
-const writeReview = review => {
-    let likeCounter = '';
-
-    // Если публикуется отзыв - добавляем ему кнопку с лайками.
-    if (review.hasOwnProperty('rate')) {
-
-        // Генерим идентификатор комментария.
-        let commentId = Math.random();
-        // Для кнопки лайков добавляем: идентификатор, атрибут onclick для передачи идентификатора в функцию, значок лайка, и само значение счётчика отделяем пробелом
-        // Также мы добавили стиль, чтобы кнопка смотрелась лучше и не имела рамок
-        likeCounter += '<button id="' + commentId + '" style="border: none" onclick="addLike(this.id)">' + `❤️ ${review.rate}</button>`
-    }
-    // Запишем результат 
-    document.getElementsByClassName('reviews')[0].innerHTML += ' <div class="review-    text">\n' + `<p> <i> <b>${review['author']}</b> ${review['date']}${likeCounter}</i></p>` + `<p>${review['text']}</p>` + '</div>';
-}
-
 function addLike(id) {
     // Найдём нужный элемент по id
     let element = document.getElementById(id);

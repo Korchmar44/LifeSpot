@@ -21,15 +21,18 @@ namespace LifeSpot
 
             app.UseRouting();
 
-            // Загружаем отдельные элементы для вставки в шаблон: боковое меню и футер
+            // Загружаем отдельные элементы для вставки в шаблон: боковое меню, футер и слайдер
             string footerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
             string sideBarHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sideBar.html"));
+            string sliderHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "slider.html"));
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapCss();
                 endpoints.MapJs();
                 endpoints.MapHtml();
+                endpoints.MapJpg();
             });
         }
     }
