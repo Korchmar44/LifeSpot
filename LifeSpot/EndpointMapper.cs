@@ -40,15 +40,35 @@ namespace LifeSpot
 
         public static void MapJpg(this IEndpointRouteBuilder builder)
         {
+            // Массив файлов JPG, которые будут доступны по HTTP
             var jpgFiles = new[] { "london.jpg", "ny.jpg", "spb.jpg" };
 
+            // Перебираем каждый файл из массива jpgFiles
             foreach (var fileName in jpgFiles)
             {
+                // Добавляем маршрут для обработки GET-запросов к каждому изображению
                 builder.MapGet($"/wwwroot/img/{fileName}", async context =>
                 {
+                    // Формируем полный путь к файлу JPG, используя текущую директорию и имя файла
                     var jpgPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", fileName);
-                    var jpg = await File.ReadAllTextAsync(jpgPath);
-                    await context.Response.WriteAsync(jpg);
+
+                    // Проверяем, существует ли файл по указанному пути
+                    if (File.Exists(jpgPath))
+                    {
+                        // Устанавливаем тип контента для ответа как "image/jpeg"
+                        context.Response.ContentType = "image/jpeg";
+
+                        // Asynchronously читаем все байты из файла JPG
+                        var jpgBytes = await File.ReadAllBytesAsync(jpgPath);
+
+                        // Записываем байты изображения в тело ответа
+                        await context.Response.Body.WriteAsync(jpgBytes, 0, jpgBytes.Length);
+                    }
+                    else
+                    {
+                        // Если файл не найден, устанавливаем статус ответа 404 (Не найдено)
+                        context.Response.StatusCode = StatusCodes.Status404NotFound;
+                    }
                 });
             }
         }
